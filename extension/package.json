@@ -1,0 +1,50 @@
+{
+  "name": "ai-writing-assistant",
+  "displayName": "AI Writing Assistant",
+  "version": "1.0.0",
+  "description": "Production-ready AI grammar and writing assistant for Slack, Gmail, LinkedIn, Notion, and the web",
+  "private": true,
+  "scripts": {
+    "dev": "plasmo dev",
+    "build": "plasmo build",
+    "build:prod": "plasmo build --target=chrome-mv3",
+    "package": "plasmo package",
+    "type-check": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@supabase/supabase-js": "^2.39.3",
+    "clsx": "^2.1.0",
+    "lucide-react": "^0.344.0",
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
+    "tailwind-merge": "^2.2.1",
+    "zustand": "^4.5.0"
+  },
+  "devDependencies": {
+    "@types/chrome": "^0.0.260",
+    "@types/node": "^20.11.5",
+    "@types/react": "18.2.48",
+    "@types/react-dom": "18.2.18",
+    "autoprefixer": "^10.4.17",
+    "plasmo": "0.89.2",
+    "postcss": "^8.4.33",
+    "tailwindcss": "^3.4.1",
+    "typescript": "5.3.3"
+  },
+  "manifest": {
+    "host_permissions": ["<all_urls>"],
+    "permissions": ["storage", "activeTab", "scripting", "contextMenus"],
+    "commands": {
+      "open-assistant": {
+        "suggested_key": {
+          "default": "Ctrl+Shift+G",
+          "mac": "Command+Shift+G"
+        },
+        "description": "Open AI Writing Assistant"
+      }
+    },
+    "content_security_policy": {
+      "extension_pages": "script-src 'self'; object-src 'self'"
+    }
+  }
+}
